@@ -1,4 +1,4 @@
-package com.walking.main.aliveThing.animal;
+package com.walking.aliveThing.animal;
 
 public class Animal {
     protected String article;

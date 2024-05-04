@@ -1,8 +1,8 @@
-package com.walking.main.aliveThing;
+package com.walking.aliveThing;
 
-import com.walking.main.aliveThing.animal.Animal;
-import com.walking.main.aliveThing.animal.pet.Cat;
-import com.walking.main.aliveThing.animal.pet.Dog;
+import com.walking.aliveThing.animal.Animal;
+import com.walking.aliveThing.animal.pet.Cat;
+import com.walking.aliveThing.animal.pet.Dog;
 
 /**
  * Реализовать класс Animal, содержащий protected-конструктор без параметров,
@@ -12,7 +12,6 @@ import com.walking.main.aliveThing.animal.pet.Dog;
  * <p>
  * Реализовать для каждого из них приватный конструктор без параметров,
  * который выводит в консоль сообщение «I’m a dog» («I’m a cat»). DONE
- * fixme ИМЕННО ЭТОТ МЕХАНИЗМ И НЕ ПОНЯЛ, ПОТОМУ ЧТО ОН В ЛЮБОМ СЛУЧАЕ ВЫВОДИТ СТРОЧКУ
  * <p>
  * Также реализовать публичный конструктор, принимающий строковый параметр color. DONE
  * <p>
@@ -25,11 +24,7 @@ import com.walking.main.aliveThing.animal.pet.Dog;
  */
 public class Main {
     public static void main(String[] args) {
-
         Animal dog = new Dog("black");
-        Animal cat = new Cat("orange");
+        Animal cat = new Cat("red");
     }
 }
-/*
-Так и не понял, почему приватный конструктор вызывает первую фразу(
- */

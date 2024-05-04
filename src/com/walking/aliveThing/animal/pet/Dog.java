@@ -1,6 +1,6 @@
-package com.walking.main.aliveThing.animal.pet;
+package com.walking.aliveThing.animal.pet;
 
-import com.walking.main.aliveThing.animal.Animal;
+import com.walking.aliveThing.animal.Animal;
 
 public class Dog extends Animal {
     private final String name = "Dog";
