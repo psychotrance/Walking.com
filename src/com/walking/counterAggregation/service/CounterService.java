@@ -1,6 +1,6 @@
-package com.walking.main.counterAggregation.service;
+package com.walking.counterAggregation.service;
 
-import com.walking.main.counterAggregation.creator.CounterCreator;
+import com.walking.counterAggregation.creator.CounterCreator;
 
 public class CounterService {
     CounterCreator[] counterServices;

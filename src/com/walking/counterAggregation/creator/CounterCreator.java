@@ -1,4 +1,4 @@
-package com.walking.main.counterAggregation.creator;
+package com.walking.counterAggregation.creator;
 
 public class CounterCreator {
     public final String NAME;

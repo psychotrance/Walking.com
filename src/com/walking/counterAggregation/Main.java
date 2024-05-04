@@ -1,4 +1,4 @@
-package com.walking.main.counterAggregation;
+package com.walking.counterAggregation;
 
 /*
 Разработать программу в рамках компании com.walking, позволяющую следить за
@@ -11,10 +11,8 @@ package com.walking.main.counterAggregation;
 и его единицы измерения должны быть неизменны.
 */
 
-import com.walking.main.counterAggregation.creator.CounterCreator;
-import com.walking.main.counterAggregation.service.CounterService;
-
-import java.util.Arrays;
+import com.walking.counterAggregation.creator.CounterCreator;
+import com.walking.counterAggregation.service.CounterService;
 
 /**Также реализовать сервис CounterService, зона ответственности которого —
 хранение массива доступных счетчиков, получение всех доступных счетчиков,
