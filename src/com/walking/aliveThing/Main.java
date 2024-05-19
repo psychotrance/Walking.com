@@ -24,7 +24,7 @@ import com.walking.aliveThing.animal.pet.Dog;
  */
 public class Main {
     public static void main(String[] args) {
-        Animal dog = new Dog("black");
-        Animal cat = new Cat("red");
+
+        new Dog("silver");
     }
 }

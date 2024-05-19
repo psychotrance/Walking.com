@@ -44,6 +44,7 @@ public class Main {
         System.out.println(newArray.getCounter("Gas"));
         System.out.println(gas.getInfo());
 
+
     }
 
     private static void printInfo(CounterCreator o) {

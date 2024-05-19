@@ -26,17 +26,14 @@ public class CounterService {
 
     public CounterCreator getCounter(String name) {
         for (CounterCreator find : counterServices) {
-            if (find.NAME != name)
-                continue;
-            return find;
+            if (find.NAME.equals(name)) return find;
         }
         return null;
     }
 
     public void setIncrement(String name) {
         for (CounterCreator find : counterServices) {
-            if (find.NAME != name)
-                continue;
+            getCounter(name);
             find.setIncrease(1);
         }
     }
