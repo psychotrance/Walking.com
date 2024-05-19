@@ -1,4 +1,10 @@
 package com.walking.roar;
+
+import com.walking.roar.animal.Animal;
+import com.walking.roar.animal.Cat;
+import com.walking.roar.animal.Cow;
+import com.walking.roar.animal.Dog;
+
 /**
 Реализуйте класс Animal. Реализуйте его наследников: Dog, Cat, Cow. Каждый из
 наследников должен содержать свой метод: woof(), meow() и moo() соответственно.
@@ -30,14 +36,13 @@ public class Main {
 
         Animal[] animals = new Animal[]{dog, cat, cow};
 
-        growl(animals, "cow");
-
+        growl(animals, "cat");
     }
 
-    private static void growl(Animal[] animals, String sound) {
+    private static void growl(Animal[] animals, String animalName) {
         for (Animal x : animals) {
-            if (x.name.equals(sound)) {
-                switch (x.name) {
+            if (x.name.equals(animalName)) {
+                switch (animalName) {
                     case "dog":
                         Dog dcDog = (Dog) x;
                         dcDog.sound();

@@ -1,4 +1,4 @@
-package com.walking.roar;
+package com.walking.roar.animal;
 
 public class Cat extends Animal {
     public Cat() {
@@ -9,7 +9,7 @@ public class Cat extends Animal {
     private void meow() {
         super.sound();
     }
-    protected void sound() {
+    public void sound() {
         this.meow();
     }
 }
