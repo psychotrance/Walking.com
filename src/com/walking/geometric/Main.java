@@ -42,8 +42,8 @@ public class Main {
                 return new Triangle(length);
             case 2:
                 return new Square(length);
-            case 3:
-                return new CorrectFigure(length);
+            default:
+                System.out.println("FAQ");
         }
         return null;
     }
