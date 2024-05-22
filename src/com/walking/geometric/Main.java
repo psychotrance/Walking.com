@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 public class Main {
     final static Scanner scanner = new Scanner(System.in);
-    final static String figuresMenu = """
+    final static String FIGURES_MENU = """
             1. Triangle
             2. Square
             """;
@@ -34,7 +34,7 @@ public class Main {
 
     private static CorrectFigure createFigure() {
         int length = requireInt("Enter a length: ");
-        int figure = requireInt(figuresMenu + "Choose a figure: ");
+        int figure = requireInt(FIGURES_MENU + "Choose a figure: ");
 
         switch (figure) {
             case 1:
