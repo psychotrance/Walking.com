@@ -21,7 +21,6 @@ public class Main {
     final static String figuresMenu = """
             1. Triangle
             2. Square
-            3. Super
             """;
 
     public static void main(String[] args) {
