@@ -24,8 +24,8 @@ public class Square extends CorrectFigure {
 
     @Override
     protected String verticalLines(int height, int width, String y, String x) {
-            for (int i = height; i > 0; i--) {
-                y += verticalLine(width, x, height - 1);
+        for (int i = height; i > 0; i--) {
+            y += verticalLine(width, x, height - 1);
         }
         return y;
     }
@@ -33,7 +33,7 @@ public class Square extends CorrectFigure {
     private String verticalLine(int width, String x, int height) {
         x += UNIT_HEIGHT;
         for (int i = width; i > 0; i--) {
-                x += UNIT_SPACE;
+            x += UNIT_SPACE;
         }
         x += UNIT_HEIGHT + '\n';
         return x;

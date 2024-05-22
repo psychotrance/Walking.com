@@ -24,7 +24,6 @@ public class CorrectFigure {
     }
 
 
-
     protected String verticalLines(int height, int width, String y, String x) {
         if (height > 0) {
             y += x;
@@ -33,9 +32,10 @@ public class CorrectFigure {
 
         return y;
     }
+
     protected String horizontalLine(int width, String line) {
         if (width > 0) {
-            return horizontalLine(width - 1, line );
+            return horizontalLine(width - 1, line);
         }
         line += '\n';
         return line;

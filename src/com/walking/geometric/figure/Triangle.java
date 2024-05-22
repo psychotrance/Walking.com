@@ -23,7 +23,7 @@ public class Triangle extends CorrectFigure {
         if (height > 0) {
             xy = spaceBeforeSym(beforeSym, xy);
             xy = spaceBetweenSym(afterSym, xy);
-        return verticalLines(height - 1, beforeSym - 1, afterSym + 2, xy);
+            return verticalLines(height - 1, beforeSym - 1, afterSym + 2, xy);
         }
         return xy;
     }
@@ -32,7 +32,7 @@ public class Triangle extends CorrectFigure {
         for (int i = enterSym; i > 0; i--) {
             xy += UNIT_SPACE;
         }
-            xy += UNIT_SLASH;
+        xy += UNIT_SLASH;
         return xy;
     }
 
@@ -40,7 +40,7 @@ public class Triangle extends CorrectFigure {
         for (int j = 0; j < enterSpace; j++) {
             xy += UNIT_SPACE;
         }
-            xy += UNIT_BACKSLASH + '\n';
+        xy += UNIT_BACKSLASH + '\n';
         return xy;
     }
 
