@@ -7,7 +7,7 @@ public class Square extends CorrectFigure {
     }
 
     @Override
-    protected String createFigure(String horizontalLine, int width, String verticalLines, int height, String figure) {
+    protected String printFigure(String horizontalLine, int width, String verticalLines, int height, String figure) {
         verticalLines += verticalLines(height, width * 3, verticalLines, horizontalLine);
         horizontalLine += horizontalLine(width * 3, horizontalLine + UNIT_SPACE);
         return figure = horizontalLine + verticalLines + horizontalLine;

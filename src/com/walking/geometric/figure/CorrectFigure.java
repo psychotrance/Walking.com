@@ -14,10 +14,10 @@ public class CorrectFigure {
         String horizontalLine = "";
         String verticalLines = "";
         String figure = "";
-        System.out.println(createFigure(horizontalLine, width, verticalLines, height, figure));
+        System.out.println(printFigure(horizontalLine, width, verticalLines, height, figure));
     }
 
-    protected String createFigure(String horizontalLine, int width, String verticalLines, int height, String figure) {
+    protected String printFigure(String horizontalLine, int width, String verticalLines, int height, String figure) {
         horizontalLine += horizontalLine(width, horizontalLine);
         verticalLines += verticalLines(height, width, verticalLines, horizontalLine);
         return figure = verticalLines + horizontalLine;

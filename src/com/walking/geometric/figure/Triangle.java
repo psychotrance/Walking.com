@@ -7,7 +7,7 @@ public class Triangle extends CorrectFigure {
     }
 
     @Override
-    public String createFigure(String horizontalLine, int width, String verticalLines, int height, String figure) {
+    public String printFigure(String horizontalLine, int width, String verticalLines, int height, String figure) {
         verticalLines = verticalLines(height, verticalLines);
         horizontalLine = horizontalLine(width * 2, horizontalLine);
         return figure = verticalLines + horizontalLine;
