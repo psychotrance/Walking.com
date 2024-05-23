@@ -35,7 +35,6 @@ public class Main {
     private static CorrectFigure createFigure() {
         int length = requireInt("Enter a length: ");
         int figure = requireInt(FIGURES_MENU + "Choose a figure: ");
-
         switch (figure) {
             case 1:
                 return new Triangle(length);

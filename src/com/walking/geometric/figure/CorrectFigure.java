@@ -23,7 +23,6 @@ public class CorrectFigure {
         return figure = verticalLines + horizontalLine;
     }
 
-
     protected String verticalLines(int height, int width, String y, String x) {
         if (height > 0) {
             y += x;
