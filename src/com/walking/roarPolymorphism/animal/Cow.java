@@ -5,6 +5,7 @@ public class Cow extends Animal {
         super();
     }
 
+    @Override
     public String sound() {
         return "Moo";
     }
