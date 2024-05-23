@@ -1,6 +1,6 @@
 package com.walking.roarPolymorphism.animal;
 
-public class Cow extends Animal{
+public class Cow extends Animal {
     public Cow() {
         super();
     }

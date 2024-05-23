@@ -10,6 +10,7 @@ public class Main {
         Animal[] animals = new Animal[]{new Cat(), new Dog(), new Cow()};
         System.out.println(roar(animals));
     }
+
     protected static String roar(Animal[] animals) {
         String say = "";
         for (Animal x : animals) {
