@@ -24,17 +24,19 @@ public class Main {
 
     public static void main(String[] args) {
         int length = requireInt("Enter a length: ");
-        int figure = requireInt(THE_CHOICE_MENU + "Choose a figure: ");
-        switch (figure) {
-            case 1:
-                new Triangle(length).build();
-                break;
-            case 2:
-                new Square(length).build();
-                break;
-            default:
-                System.out.println("FAQ");
-                break;
+        if (length > 2) {
+            int figure = requireInt(THE_CHOICE_MENU + "Choose a figure: ");
+            switch (figure) {
+                case 1:
+                    new Triangle(length).build();
+                    break;
+                case 2:
+                    new Square(length).build();
+                    break;
+                default:
+                    System.out.println("FAQ");
+                    break;
+            }
         }
     }
 

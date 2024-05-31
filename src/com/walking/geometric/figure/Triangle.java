@@ -11,8 +11,7 @@ public class Triangle extends CorrectFigure {
 
     @Override
     public void build() {
-        String verticalLines = "";
-        verticalLines += verticalLines(height);
+        String verticalLines = verticalLines(height);
         String horizontalLine = horizontalLine(width * 2);
         System.out.println(verticalLines + horizontalLine);
     }
