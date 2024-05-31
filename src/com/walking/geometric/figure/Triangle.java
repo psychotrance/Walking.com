@@ -11,43 +11,43 @@ public class Triangle extends CorrectFigure {
 
     @Override
     public void build() {
-        String verticalLines = verticalLines(height);
-        String horizontalLine = horizontalLine(width * 2);
+        String verticalLines = createVerticalLines(height);
+        String horizontalLine = createHorizontalLine(width * 2);
         System.out.println(verticalLines + horizontalLine);
     }
 
     @Override
-    public String horizontalLine(int width) {
-        return horizontalLine(width, UNIT_NULL);
+    public String createHorizontalLine(int width) {
+        return createHorizontalLine(width, UNIT_NULL);
     }
     @Override
-    public String horizontalLine(int width, String line) {
+    public String createHorizontalLine(int width, String line) {
         if (width > 0) {
-            return horizontalLine(width - 1, line + HORIZONTAL_SIDE_UNIT);
+            return createHorizontalLine(width - 1, line + HORIZONTAL_SIDE_UNIT);
         }
         return line;
     }
 
-    protected String verticalLines(int height) {
-        return verticalLines(height, UNIT_NULL);
+    protected String createVerticalLines(int height) {
+        return createVerticalLines(height, UNIT_NULL);
     }
-    protected String verticalLines(int height, String xy) {
+    protected String createVerticalLines(int height, String xy) {
         int beforeSym = height;
         int afterSym = 0;
-        return verticalLines(height, beforeSym - 1, afterSym, xy);
+        return createVerticalLines(height, beforeSym - 1, afterSym, xy);
     }
 
 
-    protected String verticalLines(int height, int beforeSym, int afterSym, String xy) {
+    protected String createVerticalLines(int height, int beforeSym, int afterSym, String xy) {
         if (height > 0) {
-            xy = spaceBeforeSym(beforeSym, xy);
-            xy = spaceBetweenSym(afterSym, xy);
-            return verticalLines(height - 1, beforeSym - 1, afterSym + 2, xy);
+            xy = createLeftSide(beforeSym, xy);
+            xy = createRightSide(afterSym, xy);
+            return createVerticalLines(height - 1, beforeSym - 1, afterSym + 2, xy);
         }
         return xy;
     }
 
-    protected static String spaceBeforeSym(int enterSym, String xy) {
+    protected static String createLeftSide(int enterSym, String xy) {
         for (int i = enterSym; i > 0; i--) {
             xy += UNIT_SPACE;
         }
@@ -55,7 +55,7 @@ public class Triangle extends CorrectFigure {
         return xy;
     }
 
-    protected static String spaceBetweenSym(int enterSpace, String xy) {
+    protected static String createRightSide(int enterSpace, String xy) {
         for (int j = 0; j < enterSpace; j++) {
             xy += UNIT_SPACE;
         }

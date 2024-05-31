@@ -10,40 +10,40 @@ public class Square extends CorrectFigure {
 
     @Override
     public void build() {
-        String horizontalLine = horizontalLine(width);
-        String verticalLines = verticalLines(height, width * 3);
+        String horizontalLine = createHorizontalLine(width);
+        String verticalLines = createVerticalLines(height, width * 3);
         System.out.println(horizontalLine + verticalLines + horizontalLine);
     }
 
     @Override
-    protected String horizontalLine(int width) {
-        return horizontalLine(width * 3, UNIT_SPACE);
+    protected String createHorizontalLine(int width) {
+        return createHorizontalLine(width * 3, UNIT_SPACE);
     }
 
     @Override
-    protected String horizontalLine(int width, String horizontalLine) {
+    protected String createHorizontalLine(int width, String horizontalLine) {
         if (width > 0) {
             horizontalLine += HORIZONTAL_SIDE_UNIT;
-            return horizontalLine(width - 1, horizontalLine);
+            return createHorizontalLine(width - 1, horizontalLine);
         }
         horizontalLine += '\n';
         return horizontalLine;
     }
 
     @Override
-    protected String verticalLines(int height, int width) {
-        return verticalLines(height, width, UNIT_NULL, UNIT_NULL);
+    protected String createVerticalLines(int height, int width) {
+        return createVerticalLines(height, width, UNIT_NULL, UNIT_NULL);
     }
 
     @Override
-    protected String verticalLines(int height, int width, String sides, String line) {
+    protected String createVerticalLines(int height, int width, String sides, String line) {
         for (int i = height; i > 0; i--) {
-            sides += verticalLineUnit(width, line);
+            sides += createVerticalLineUnit(width, line);
         }
         return sides;
     }
 
-    private String verticalLineUnit(int width, String line) {
+    private String createVerticalLineUnit(int width, String line) {
         line += VERTICAL_SIDE_UNIT;
         for (int i = width; i > 0; i--) {
             line += UNIT_SPACE;

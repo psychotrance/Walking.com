@@ -12,30 +12,30 @@ public class CorrectFigure {
     }
 
     protected void build() {
-        String horizontalLine = horizontalLine(width);
-        String verticalLines = verticalLines(height, width);
+        String horizontalLine = createHorizontalLine(width);
+        String verticalLines = createVerticalLines(height, width);
         System.out.println(verticalLines + horizontalLine);
     }
 
-    protected String verticalLines(int height, int width) {
-        return verticalLines(height, width, UNIT_SPACE, UNIT_SPACE);
+    protected String createVerticalLines(int height, int width) {
+        return createVerticalLines(height, width, UNIT_SPACE, UNIT_SPACE);
     }
 
-    protected String verticalLines(int height, int width, String sides, String line) {
+    protected String createVerticalLines(int height, int width, String sides, String line) {
         if (height > 0) {
             sides += line;
-            return verticalLines(height - 1, width, sides, line);
+            return createVerticalLines(height - 1, width, sides, line);
         }
         return sides;
     }
 
-    protected String horizontalLine(int width) {
-        return horizontalLine(width, UNIT_SPACE);
+    protected String createHorizontalLine(int width) {
+        return createHorizontalLine(width, UNIT_SPACE);
     }
 
-    protected String horizontalLine(int width, String line) {
+    protected String createHorizontalLine(int width, String line) {
         if (width > 0) {
-            return horizontalLine(width - 1, line);
+            return createHorizontalLine(width - 1, line);
         }
         line += '\n';
         return line;
