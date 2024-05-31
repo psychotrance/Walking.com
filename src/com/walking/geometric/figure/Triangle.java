@@ -1,25 +1,45 @@
 package com.walking.geometric.figure;
 
 public class Triangle extends CorrectFigure {
+    protected static final String TRIANGLE_LEFT_SIDE_UNIT = "/";
+    protected static final String TRIANGLE_RIGHT_SIDE_UNIT = "\\";
+    protected static final String HORIZONTAL_SIDE_UNIT = "-";
 
     public Triangle(int length) {
         super(length);
     }
 
     @Override
-    public String printFigure(String horizontalLine, int width, String verticalLines, int height, String figure) {
-        verticalLines = verticalLines(height, verticalLines);
-        horizontalLine = horizontalLine(width * 2, horizontalLine);
-        return figure = verticalLines + horizontalLine;
+    public void build() {
+        String verticalLines = "";
+        verticalLines += verticalLines(height);
+        String horizontalLine = horizontalLine(width * 2);
+        System.out.println(verticalLines + horizontalLine);
     }
 
-    private String verticalLines(int height, String xy) {
+    @Override
+    public String horizontalLine(int width) {
+        return horizontalLine(width, UNIT_NULL);
+    }
+    @Override
+    public String horizontalLine(int width, String line) {
+        if (width > 0) {
+            return horizontalLine(width - 1, line + HORIZONTAL_SIDE_UNIT);
+        }
+        return line;
+    }
+
+    protected String verticalLines(int height) {
+        return verticalLines(height, UNIT_NULL);
+    }
+    protected String verticalLines(int height, String xy) {
         int beforeSym = height;
         int afterSym = 0;
         return verticalLines(height, beforeSym - 1, afterSym, xy);
     }
 
-    private String verticalLines(int height, int beforeSym, int afterSym, String xy) {
+
+    protected String verticalLines(int height, int beforeSym, int afterSym, String xy) {
         if (height > 0) {
             xy = spaceBeforeSym(beforeSym, xy);
             xy = spaceBetweenSym(afterSym, xy);
@@ -28,27 +48,19 @@ public class Triangle extends CorrectFigure {
         return xy;
     }
 
-    private static String spaceBeforeSym(int enterSym, String xy) {
+    protected static String spaceBeforeSym(int enterSym, String xy) {
         for (int i = enterSym; i > 0; i--) {
             xy += UNIT_SPACE;
         }
-        xy += UNIT_SLASH;
+        xy += TRIANGLE_LEFT_SIDE_UNIT;
         return xy;
     }
 
-    private static String spaceBetweenSym(int enterSpace, String xy) {
+    protected static String spaceBetweenSym(int enterSpace, String xy) {
         for (int j = 0; j < enterSpace; j++) {
             xy += UNIT_SPACE;
         }
-        xy += UNIT_BACKSLASH + '\n';
+        xy += TRIANGLE_RIGHT_SIDE_UNIT + '\n';
         return xy;
-    }
-
-    @Override
-    public String horizontalLine(int width, String line) {
-        if (width > 0) {
-            return horizontalLine(width - 1, line + UNIT_WIDTH);
-        }
-        return line;
     }
 }

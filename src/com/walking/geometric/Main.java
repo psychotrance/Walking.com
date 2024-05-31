@@ -1,6 +1,5 @@
 package com.walking.geometric;
 
-import com.walking.geometric.figure.CorrectFigure;
 import com.walking.geometric.figure.Square;
 import com.walking.geometric.figure.Triangle;
 
@@ -17,32 +16,30 @@ import java.util.Scanner;
 Обратите внимание, символ '\' в Java необходимо экранировать: '\\'.
  */
 public class Main {
-    final static Scanner scanner = new Scanner(System.in);
-    final static String FIGURES_MENU = """
+    final static Scanner SCANNER = new Scanner(System.in);
+    final static String THE_CHOICE_MENU = """
             1. Triangle
             2. Square
             """;
 
     public static void main(String[] args) {
-        createFigure();
+        int length = requireInt("Enter a length: ");
+        int figure = requireInt(THE_CHOICE_MENU + "Choose a figure: ");
+        switch (figure) {
+            case 1:
+                new Triangle(length).build();
+                break;
+            case 2:
+                new Square(length).build();
+                break;
+            default:
+                System.out.println("FAQ");
+                break;
+        }
     }
 
     static int requireInt(String requireMessage) {
         System.out.print(requireMessage);
-        return scanner.nextInt();
-    }
-
-    private static CorrectFigure createFigure() {
-        int length = requireInt("Enter a length: ");
-        int figure = requireInt(FIGURES_MENU + "Choose a figure: ");
-        switch (figure) {
-            case 1:
-                return new Triangle(length);
-            case 2:
-                return new Square(length);
-            default:
-                System.out.println("FAQ");
-        }
-        return null;
+        return SCANNER.nextInt();
     }
 }

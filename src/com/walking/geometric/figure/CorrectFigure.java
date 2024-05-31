@@ -2,34 +2,35 @@ package com.walking.geometric.figure;
 
 public class CorrectFigure {
     protected static final String UNIT_SPACE = " ";
-    protected static final String UNIT_WIDTH = "-";
-    protected static final String UNIT_HEIGHT = "|";
-    protected static final String UNIT_SLASH = "/";
-    protected static final String UNIT_BACKSLASH = "\\";
+    protected static final String UNIT_NULL = "";
+    protected static int width;
+    protected static int height;
 
     public CorrectFigure(int length) {
-        int height;
-        int width;
-        width = height = length;
-        String horizontalLine = "";
-        String verticalLines = "";
-        String figure = "";
-        System.out.println(printFigure(horizontalLine, width, verticalLines, height, figure));
+        width = length;
+        height = length;
     }
 
-    protected String printFigure(String horizontalLine, int width, String verticalLines, int height, String figure) {
-        horizontalLine += horizontalLine(width, horizontalLine);
-        verticalLines += verticalLines(height, width, verticalLines, horizontalLine);
-        return figure = verticalLines + horizontalLine;
+    protected void build() {
+        String horizontalLine = horizontalLine(width);
+        String verticalLines = verticalLines(height, width);
+        System.out.println(verticalLines + horizontalLine);
     }
 
-    protected String verticalLines(int height, int width, String y, String x) {
+    protected String verticalLines(int height, int width) {
+        return verticalLines(height, width, UNIT_SPACE, UNIT_SPACE);
+    }
+
+    protected String verticalLines(int height, int width, String sides, String line) {
         if (height > 0) {
-            y += x;
-            return verticalLines(height - 1, width, y, x);
+            sides += line;
+            return verticalLines(height - 1, width, sides, line);
         }
+        return sides;
+    }
 
-        return y;
+    protected String horizontalLine(int width) {
+        return horizontalLine(width, UNIT_SPACE);
     }
 
     protected String horizontalLine(int width, String line) {
